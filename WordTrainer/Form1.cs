@@ -75,13 +75,14 @@ namespace WordTrainer
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
     
-            OptionForm optForm = new OptionForm();
+            OptionForm optForm = new OptionForm(dic.Count);
             optForm.ShowDialog();
         }
 
         private void btn_Start_Click(object sender, EventArgs e)
         {
-
+            TrainingForm trbForm = new TrainingForm(dic);
+            trbForm.Show();
         }
     }
 }

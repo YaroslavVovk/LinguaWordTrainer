@@ -12,17 +12,28 @@ namespace WordTrainer
 {
     public partial class OptionForm : Form
     {
-        public OptionForm()
+        int countElement = 0;
+        public OptionForm(int countElement)
         {
             InitializeComponent();
+            this.countElement = countElement;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "")
             {
-                ConfugurationOptions.WordCount = int.Parse(textBox1.Text);
-                ConfugurationOptions.FromEngtoRus = checkBox1.Checked;
+                ConfigurationOptions.WordCount = int.Parse(textBox1.Text);
+                ConfigurationOptions.FromEngtoRus = checkBox1.Checked;
+                if (ConfigurationOptions.WordCount > countElement)
+                {
+                    MessageBox.Show("Count of word must be least than all worsd in dictionary");
+                    ConfigurationOptions.WordCount = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Options was applied");
+                }
             }
             else
             {

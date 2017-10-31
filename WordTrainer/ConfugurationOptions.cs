@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WordTrainer
 {
-    static class ConfugurationOptions
+    static class ConfigurationOptions
     {
         private static int wordCount = 10;
         private static bool fromEngtoRus = true;

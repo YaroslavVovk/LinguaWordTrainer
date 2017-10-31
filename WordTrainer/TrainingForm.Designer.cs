@@ -45,7 +45,7 @@
             // 
             this.lb_Word.AutoSize = true;
             this.lb_Word.ForeColor = System.Drawing.Color.Lime;
-            this.lb_Word.Location = new System.Drawing.Point(81, 11);
+            this.lb_Word.Location = new System.Drawing.Point(22, 11);
             this.lb_Word.Name = "lb_Word";
             this.lb_Word.Size = new System.Drawing.Size(56, 20);
             this.lb_Word.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.lb_Tranlation.AutoSize = true;
             this.lb_Tranlation.ForeColor = System.Drawing.Color.Lime;
-            this.lb_Tranlation.Location = new System.Drawing.Point(81, 42);
+            this.lb_Tranlation.Location = new System.Drawing.Point(22, 43);
             this.lb_Tranlation.Name = "lb_Tranlation";
             this.lb_Tranlation.Size = new System.Drawing.Size(56, 20);
             this.lb_Tranlation.TabIndex = 0;
@@ -96,6 +96,7 @@
             this.btn_Dunno.TabIndex = 1;
             this.btn_Dunno.Text = "I dunno";
             this.btn_Dunno.UseVisualStyleBackColor = true;
+            this.btn_Dunno.Click += new System.EventHandler(this.btn_Dunno_Click);
             // 
             // btn_Know
             // 
@@ -107,6 +108,7 @@
             this.btn_Know.TabIndex = 1;
             this.btn_Know.Text = "I know";
             this.btn_Know.UseVisualStyleBackColor = true;
+            this.btn_Know.Click += new System.EventHandler(this.btn_Know_Click);
             // 
             // btn_Next
             // 
@@ -118,6 +120,7 @@
             this.btn_Next.TabIndex = 1;
             this.btn_Next.Text = "Next";
             this.btn_Next.UseVisualStyleBackColor = true;
+            this.btn_Next.Click += new System.EventHandler(this.btn_Next_Click);
             // 
             // panel2
             // 
