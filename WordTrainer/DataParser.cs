@@ -29,7 +29,8 @@ namespace WordTrainer
                         if (regex.IsMatch(line))
                         {
                             string[] str = line.Split(' ');
-                            dic.Add(new MyDictionary() { EngWord = str[0], RusWord = str[4] });
+                            if (str.Length <= 5)
+                                dic.Add(new MyDictionary() { EngWord = str[0], RusWord = str[4] });                  
                         }
                     }
                 }
