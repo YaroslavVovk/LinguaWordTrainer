@@ -16,6 +16,8 @@ namespace WordTrainer
         string path = @"D:\Projects\WordTrainer\WordTrainer\Words1.txt";
         DataParser parser;
         List<MyDictionary> dic;
+       
+
 
         public Form1()
         {
@@ -70,5 +72,16 @@ namespace WordTrainer
 
         }
 
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+    
+            OptionForm optForm = new OptionForm();
+            optForm.ShowDialog();
+        }
+
+        private void btn_Start_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

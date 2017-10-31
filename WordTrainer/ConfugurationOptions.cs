@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace WordTrainer
 {
-    class ConfugurationOptions
+    static class ConfugurationOptions
     {
+        private static int wordCount = 10;
+        private static bool fromEngtoRus = true;
+
+        public static int WordCount { get => wordCount; set => wordCount = value; }
+        public static bool FromEngtoRus { get => fromEngtoRus; set => fromEngtoRus = value; }
     }
 }
