@@ -17,6 +17,7 @@ namespace WordTrainer
         {
             InitializeComponent();
             this.countElement = countElement;
+            textBox1.Text = "10";
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -14,7 +14,7 @@ namespace WordTrainer
     {
         public static Random random;
         public int[] indexs;
-        public int index = -1;
+        public int index = 0;
         List<MyDictionary> dic;
         int size;
         public bool wasAsked = false;
@@ -40,43 +40,46 @@ namespace WordTrainer
         }
 
         public void AskWord(ref int index)
-        {          
+        {
+            wasAsked = true;
+            wasAnswered = false;
             lb_Tranlation.Visible = false;
-            index++;
-            if (indexs.Length == 0)
-            {
-                MessageBox.Show("All words was trained");
-            }
- 
+            
 
-            else if (index < indexs.Length)
+            int elementIndex = indexs[index];
+            if (ConfigurationOptions.FromEngtoRus)
             {
-                int elementIndex = indexs[index];
                 lb_Word.Text = dic[elementIndex].EngWord;
                 lb_Tranlation.Text = dic[elementIndex].RusWord;
             }
-
             else
             {
-                index = 0;
+                lb_Word.Text = dic[elementIndex].RusWord;
+                lb_Tranlation.Text = dic[elementIndex].EngWord;
             }
-            wasAsked = true;
-            wasAnswered = false;
-
-
         }
 
         private void btn_Next_Click(object sender, EventArgs e)
         {
-            if(wasAnswered)
+            index++;
+            if (indexs.Length == 0)
+            {
+                MessageBox.Show("All words was trained");
+                return;
+            }
+            if (indexs.Length == index)
+                index = 0;
+            if (wasAnswered)
+            {
                 AskWord(ref index);
+            }
         }
 
         private void btn_Dunno_Click(object sender, EventArgs e)
         {
             lb_Tranlation.Visible = true;
             wasAnswered = true;
-            wasAsked = false;
+            wasAsked = false;         
         }
 
         private void btn_Know_Click(object sender, EventArgs e)
